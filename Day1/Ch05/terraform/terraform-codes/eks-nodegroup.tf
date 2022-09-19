@@ -5,6 +5,7 @@ resource "aws_eks_node_group" "test-eks-nodegroup" {
   subnet_ids      = [aws_subnet.test-public-subnet1.id, aws_subnet.test-public-subnet3.id]
   instance_types = ["t3a.medium"]
   disk_size = 20
+  
 
   labels = {
     "role" = "eks-nodegroup"

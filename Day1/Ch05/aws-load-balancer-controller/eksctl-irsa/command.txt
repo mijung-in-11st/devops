@@ -1,8 +1,9 @@
 eksctl create iamserviceaccount \
-  --cluster=<EKS Cluster명> \
+  --cluster=skt-kmj-eks-cluster \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
-  --role-name "AmazonEKSLoadBalancerControllerRole" \
-  --attach-policy-arn=arn:aws:iam::<AWS 계정 ID>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --role-name "skt-kmj-AmazonEKSLoadBalancerControllerRole" \
+  --attach-policy-arn=arn:aws:iam::255380800200:policy/skt-kmj-AWSLoadBalancerControllerIAMPolicy \
   --override-existing-serviceaccounts \
+  --region=ap-southeast-1 \
   --approve
