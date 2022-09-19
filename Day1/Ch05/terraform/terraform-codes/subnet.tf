@@ -5,7 +5,7 @@ resource "aws_subnet" "test-public-subnet1" {
   ]
 
   assign_ipv6_address_on_creation                = "false"
-  cidr_block                                     = "172.32.0.0/20"
+  cidr_block                                     = "172.34.0.0/20"
   enable_dns64                                   = "false"
   enable_resource_name_dns_a_record_on_launch    = "false"
   enable_resource_name_dns_aaaa_record_on_launch = "false"
@@ -14,13 +14,13 @@ resource "aws_subnet" "test-public-subnet1" {
   private_dns_hostname_type_on_launch            = "ip-name"
 
   tags = {
-    Name                                     = "test-public-subnet1"
+    Name                                     = "skt-kmj-public-subnet1"
     "kubernetes.io/cluster/test-eks-cluster" = "shared"
     "kubernetes.io/role/elb"                 = 1
   }
 
   tags_all = {
-    Name                                     = "test-public-subnet1"
+    Name                                     = "skt-kmj-public-subnet1"
     "kubernetes.io/cluster/test-eks-cluster" = "shared"
     "kubernetes.io/role/elb"                 = 1
   }
@@ -36,7 +36,7 @@ resource "aws_subnet" "test-public-subnet3" {
   ]
 
   assign_ipv6_address_on_creation                = "false"
-  cidr_block                                     = "172.32.16.0/20"
+  cidr_block                                     = "172.34.16.0/20"
   enable_dns64                                   = "false"
   enable_resource_name_dns_a_record_on_launch    = "false"
   enable_resource_name_dns_aaaa_record_on_launch = "false"
@@ -45,13 +45,13 @@ resource "aws_subnet" "test-public-subnet3" {
   private_dns_hostname_type_on_launch            = "ip-name"
 
   tags = {
-    Name                                     = "test-public-subnet3"
+    Name                                     = "skt-kmj-public-subnet3"
     "kubernetes.io/cluster/test-eks-cluster" = "shared"
     "kubernetes.io/role/elb"                 = 1
   }
 
   tags_all = {
-    Name                                     = "test-public-subnet3"
+    Name                                     = "skt-kmj-public-subnet3"
     "kubernetes.io/cluster/test-eks-cluster" = "shared"
     "kubernetes.io/role/elb"                 = 1
   }
