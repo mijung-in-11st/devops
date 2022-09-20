@@ -3,7 +3,7 @@ eksctl create iamserviceaccount \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name "skt-kmj-AmazonEKSLoadBalancerControllerRole" \
-  --attach-policy-arn=arn:aws:iam::255380800200:policy/skt-kmj-AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn=arn:aws:iam255380800200:policy/skt-kmj-AWSLoadBalancerControllerIAMPolicy \
   --override-existing-serviceaccounts \
   --region=ap-southeast-1 \
   --approve
