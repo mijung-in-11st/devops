@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-test
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing # 인터넷에서도 접속할 수 있도록
+    alb.ingress.kubernetes.io/target-type: ip # ip 혹은 인스턴스 단위로 선택할 수 있음
+    alb.ingress.kubernetes.io/subnets: subnet-0fdebcbf85127de1a, subnet-02c0fe9c77f326630
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bubble-pool
+                port:
+                  number: 80
