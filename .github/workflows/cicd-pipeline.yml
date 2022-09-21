@@ -5,7 +5,7 @@ on:
     branches: [ develop ]
 
 env:
-  ecr-repo: test
+  ecr-repo: 255380800200.dkr.ecr.ap-southeast-1.amazonaws.com/skt-user02
   image-tag: orange
 
 jobs:
@@ -38,6 +38,7 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
   update-argocd-backend-metadata:
+  # CD 를 하기위한 이미지 태그 갱신 및 trigger 작업 수행
     needs: build
     runs-on: ubuntu-latest
 
@@ -54,8 +55,8 @@ jobs:
 
       - name: git push
         run: |
-          git config --global user.email "skwjdgh1@gmail.com"
-          git config --global user.name "Najeongho"
+          git config --global user.email "mijung.ko.11st@gmail.com"
+          git config --global user.name "mijung-in-11st"
           git pull origin main
           git add values.yaml
           git commit -m "[feat] trigger to deploy microservice container to kubernetes"
