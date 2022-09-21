@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
 
 # jobs 외부에 있으면 전역변수처럼 사용할 수 있음
 env:
