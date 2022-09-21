@@ -2,10 +2,11 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ main ]
 
+# jobs 외부에 있으면 전역변수처럼 사용할 수 있음
 env:
-  ecr-repo: 255380800200.dkr.ecr.ap-southeast-1.amazonaws.com/skt-user02
+  ecr-repo: skt-user02
   image-tag: orange
 
 jobs:
