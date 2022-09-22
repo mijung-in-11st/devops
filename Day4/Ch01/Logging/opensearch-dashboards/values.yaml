@@ -124,7 +124,7 @@ ingress:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/subnets: <Subnet IDs>
+    alb.ingress.kubernetes.io/subnets: subnet-0fdebcbf85127de1a, subnet-02c0fe9c77f326630
   hosts:
     - host: ""
       paths:
@@ -204,3 +204,26 @@ lifecycle: {}
   #       - |
   #         #!/bin/bash
   #         curl -I "http://admin:admin@127.0.0.1:5601/status -H "kbn-xsrf: true" -H 'kbn-xsrf: true' -H "Content-Type: application/json"
+
+# eksctl create iamserviceaccount \
+# --name ebs-csi-controller-sa \
+# --namespace kube-system \
+# --cluster skt-kmj-eks-cluster \
+# --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \ 
+# --approve \
+# --role-only \
+# --role-name skt-kmj-AmazonEKS_EBS_CSI_DriverRole
+
+# eksctl create iamserviceaccount \
+# --name ebs-csi-controller-sa \
+# --namespace kube-system \
+# --cluster skt-kmj-eks-cluster \
+# --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \ 
+# --approve \
+# --role-only \
+# --role-name skt-kmj-AmazonEKS_EBS_CSI_DriverRole
+
+# eksctl create addon --name aws-ebs-csi-driver \
+# --cluster skt-kmj-eks-cluster \
+# --service-account-role-arn \ arn:aws:iam::255380800200:role/skt-kmj-AmazonEKS_EBS_CSI_DriverRole \ 
+# --force

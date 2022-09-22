@@ -3,7 +3,7 @@ kind: DestinationRule
 metadata:
   name: httpbin
 spec:
-  host: httpbin
+  host: httpbin # 설정할 Namespace
   trafficPolicy:
     connectionPool:
       tcp:
