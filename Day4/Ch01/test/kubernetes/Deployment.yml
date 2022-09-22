@@ -51,9 +51,9 @@ spec:
             cpu: "500m" 
         livenessProbe:
           exec:
-            command:
+            command: # 8080 -> 8081 바꿔서 장애유발
             - curl
-            - localhost:8080/health/live
+            - localhost:8081/health/live
           initialDelaySeconds: 5
           periodSeconds: 4
           timeoutSeconds: 1
@@ -61,7 +61,7 @@ spec:
           exec:
             command:
             - curl
-            - localhost:8080/health/ready
+            - localhost:8081/health/ready
           initialDelaySeconds: 6
           periodSeconds: 5
           timeoutSeconds: 1
