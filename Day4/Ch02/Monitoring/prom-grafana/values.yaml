@@ -140,7 +140,10 @@ alertmanager:
 
   ## Annotations for Alertmanager
   ##
-  annotations: {}
+  annotations:
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/subnets: subnet-0fdebcbf85127de1a, subnet-02c0fe9c77f326630
 
   ## Api that prometheus will use to communicate with alertmanager. Possible values are v1, v2
   ##
@@ -170,7 +173,7 @@ alertmanager:
   ##
   config:
     global:
-      slack_api_url: '<Slack Webhook URL>'
+      slack_api_url: 'https://wiki.11stcorp.com/pages/viewpage.action?pageId=318866533'
 
     route:
       receiver: 'default-receiver'
